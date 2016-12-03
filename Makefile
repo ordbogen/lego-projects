@@ -15,7 +15,7 @@ guirlande: $(OUTPUT_DIR)/guirlande
 
 $(OUTPUT_DIR)/guirlande: $(SOURCES)
 	mkdir -p $(OUTPUT_DIR)
-	arm-linux-gnueabi-g++ -Ilibs/ev3dev-lang-cpp -Iinclude -std=c++11 -pthread -o $(OUTPUT_DIR)/slice $(SOURCES)
+	arm-linux-gnueabi-g++ -Ilibs/ev3dev-lang-cpp -Iinclude -std=c++11 -pthread -o $(OUTPUT_DIR)/guirlande $(SOURCES)
 
 deploy: guirlande
-	scp slice robot@lan.ev3-3.ordbogen.com:/home/robot/projects/
+	scp guirlande robot@lan.ev3-3.ordbogen.com:/home/robot/projects/
